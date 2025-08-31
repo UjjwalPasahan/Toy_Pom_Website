@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PetCare - Ultimate Care For Your Pets</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/cb8535f973.js" crossorigin="anonymous"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'yellow-custom': '#FFD700',
+                        'orange-custom': '#FF6B35',
+                        'black-custom': '#1a1a1a',
+                        'blue-custom': '#4A90E2',
+                    },
+                    fontFamily: {
+                        'custom': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        .curved-section {
+            clip-path: polygon(0 0, 70% 0, 80% 100%, 0 100%);
+        }
+        
+        .curved-image {
+            clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+        }
+        
+        .floating-animation {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.9) 0%, rgba(74, 144, 226, 0.7) 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(255, 215, 0, 0.2);
+        }
+        
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .custom-shape {
+            position: relative;
+        }
+        
+        .custom-shape::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: #4A90E2;
+            border-radius: 50%;
+            opacity: 0.3;
+        }
+        
+        .custom-shape::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: #FFD700;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body class="bg-black-custom text-white font-custom overflow-x-hidden">
+    
+    <!-- Hero Section -->
+    <section class="min-h-screen relative overflow-hidden">
+        <div class="flex h-screen">
+            <!-- Left Content Section -->
+            <div class="w-full lg:w-3/5 bg-blue-custom relative curved-section">
+                <div class="gradient-overlay absolute inset-0"></div>
+                <div class="relative z-10 h-full flex items-center">
+                    <div class="container mx-auto px-8 lg:px-16">
+                        <!-- Top Navigation -->
+                        <div class="absolute top-8 left-8 right-8 flex justify-between items-center">
+                            <div class="flex items-center space-x-2">
+                                <i class="fa-solid fa-paw text-yellow-custom text-2xl"></i>
+                                <span class="text-white font-bold text-xl">PetCare</span>
+                            </div>
+                            <div class="hidden md:flex space-x-8 text-white">
+                                <a href="#" class="hover:text-yellow-custom transition-colors">About Us</a>
+                                <a href="#" class="hover:text-yellow-custom transition-colors">Services</a>
+                                <a href="#" class="hover:text-yellow-custom transition-colors">Contact</a>
+                            </div>
+                            <button class="bg-orange-custom text-white px-6 py-2 rounded-full font-semibold hover:bg-orange-600 transition-all">
+                                GET A QUOTE
+                            </button>
+                        </div>
+
+                        <div class="mt-32">
+                            <h1 class="text-4xl lg:text-6xl font-bold mb-6 text-white text-shadow leading-tight">
+                                Professional<br>
+                                Pet Care<br>
+                                Service for<br>
+                                <span class="text-yellow-custom">Happy Pets</span>
+                            </h1>
+                            <p class="text-lg lg:text-xl text-gray-200 mb-8 max-w-lg leading-relaxed">
+                                Premium pet care services with experienced staff. We ensure your furry friends receive the best treatment, grooming, and day care for their optimal well-being.
+                            </p>
+                            <button class="bg-orange-custom text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                                GET A QUOTE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Image Section -->
+            <div class="hidden lg:block lg:w-2/5 relative">
+                <div class="curved-image h-full relative overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1200&q=80" 
+                         alt="Happy Golden Retriever" 
+                         class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black-custom/30 to-transparent"></div>
+                    
+                    <!-- Floating decorative elements -->
+                    <div class="absolute top-20 right-10 w-16 h-16 bg-yellow-custom rounded-full floating-animation flex items-center justify-center">
+                        <i class="fa-solid fa-heart text-black-custom text-xl"></i>
+                    </div>
+                    <div class="absolute bottom-32 right-8 w-12 h-12 bg-blue-custom rounded-full floating-animation opacity-80" style="animation-delay: -2s;"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile Hero Image -->
+    <section class="lg:hidden">
+        <div class="h-96 relative overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1583337130417-3346a1be7dee?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600&q=80" 
+                 alt="Happy Golden Retriever" 
+                 class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black-custom/50 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-20 bg-gray-900 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Why Choose <span class="text-yellow-custom">Our Services?</span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    We provide comprehensive pet care solutions with modern facilities and expert staff
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-black-custom p-8 rounded-3xl card-hover border border-gray-800 custom-shape">
+                    <div class="w-20 h-20 bg-gradient-to-r from-blue-custom to-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa-solid fa-users text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-yellow-custom">Experienced Team</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">Professional staff with years of experience in pet care and genuine love for animals.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="bg-black-custom p-8 rounded-3xl card-hover border border-gray-800 custom-shape">
+                    <div class="w-20 h-20 bg-gradient-to-r from-yellow-custom to-yellow-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa-solid fa-dog text-black-custom text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-yellow-custom">Premium Comfort</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">Luxurious and comfortable spaces designed specifically for your pets' happiness and well-being.</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="bg-black-custom p-8 rounded-3xl card-hover border border-gray-800 custom-shape">
+                    <div class="w-20 h-20 bg-gradient-to-r from-orange-custom to-orange-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa-solid fa-bed text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-yellow-custom">Modern Equipment</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">State-of-the-art facilities and cutting-edge methods for optimal pet care and treatment.</p>
+                </div>
+                
+                <!-- Feature 4 -->
+                <div class="bg-black-custom p-8 rounded-3xl card-hover border border-gray-800 custom-shape">
+                    <div class="w-20 h-20 bg-gradient-to-r from-green-500 to-green-400 rounded-2xl flex items-center justify-center mb-6 mx-auto">
+                        <i class="fa-solid fa-house-medical-flag text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-4 text-center text-yellow-custom">Welcoming Space</h3>
+                    <p class="text-gray-300 text-center leading-relaxed">Comfortable waiting areas with amenities for both you and your beloved pets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section class="py-20 bg-black-custom relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-bold mb-4">
+                    What Our <span class="text-yellow-custom">Clients Say</span>
+                </h2>
+                <p class="text-gray-300 text-lg max-w-2xl mx-auto">
+                    Real experiences from pet owners who trust us with their furry family members
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Review 1 -->
+                <div class="bg-gradient-to-br from-blue-custom/10 to-blue-custom/5 p-8 rounded-3xl card-hover border border-blue-custom/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-custom/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" 
+                                 alt="Xavier" 
+                                 class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-yellow-custom/50">
+                            <div>
+                                <h3 class="text-xl font-semibold text-yellow-custom">Xavier</h3>
+                                <p class="text-gray-400">Dog Owner</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star-half-alt text-yellow-custom"></i>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed">"Outstanding service! The facilities are amazing and the staff genuinely cares about each pet. My dog always comes home happy and healthy."</p>
+                    </div>
+                </div>
+                
+                <!-- Review 2 -->
+                <div class="bg-gradient-to-br from-orange-custom/10 to-orange-custom/5 p-8 rounded-3xl card-hover border border-orange-custom/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-custom/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616c9c96840?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" 
+                                 alt="Sarah" 
+                                 class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-yellow-custom/50">
+                            <div>
+                                <h3 class="text-xl font-semibold text-yellow-custom">Sarah</h3>
+                                <p class="text-gray-400">Dog Owner</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom"></i>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed">"Incredible experience! The environment is so professional yet welcoming. My cat received the best care possible. Highly recommend!"</p>
+                    </div>
+                </div>
+                
+                <!-- Review 3 -->
+                <div class="bg-gradient-to-br from-green-500/10 to-green-500/5 p-8 rounded-3xl card-hover border border-green-500/20 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-custom/10 to-transparent rounded-full -translate-y-16 translate-x-16"></div>
+                    <div class="relative z-10">
+                        <div class="flex items-center mb-6">
+                            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&h=150&q=80" 
+                                 alt="John" 
+                                 class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-yellow-custom/50">
+                            <div>
+                                <h3 class="text-xl font-semibold text-yellow-custom">Ashish</h3>
+                                <p class="text-gray-400">Multi-Pet Owner</p>
+                            </div>
+                        </div>
+                        <div class="flex mb-4">
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star text-yellow-custom mr-1"></i>
+                            <i class="fas fa-star-half-alt text-yellow-custom"></i>
+                        </div>
+                        <p class="text-gray-300 italic leading-relaxed">"Perfect for both my dogs and cats! The staff is knowledgeable and the facilities are top-notch. Worth every penny!"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-custom to-blue-600 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-custom/90 to-blue-600/90"></div>
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6 text-white">
+                Ready to Give Your Pet<br>
+                <span class="text-yellow-custom">The Best Care?</span>
+            </h2>
+            <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
+                Contact us today for a consultation and see why pet owners trust us with their beloved companions.
+            </p>
+            <button class="bg-orange-custom text-white px-12 py-4 rounded-full font-semibold text-lg hover:bg-orange-600 transition-all transform hover:scale-105 shadow-lg">
+                SCHEDULE CONSULTATION
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black-custom py-16 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="text-center">
+                <h3 class="text-3xl font-bold mb-6 flex items-center justify-center">
+                    <i class="fa-solid fa-paw text-yellow-custom mr-3"></i>
+                    Toy_Pom_<span class="text-yellow-custom">Dog_Kennel</span>
+                </h3>
+                <p class="text-gray-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    Your trusted partner in pet care excellence. We provide premium services including grooming, veterinary care, boarding, and wellness programs tailored to your pet's unique needs.
+                </p>
+                <div class="mb-8">
+                    <p class="text-yellow-custom font-semibold text-lg mb-2">Business Hours</p>
+                    <p class="text-gray-300">Monday - Sunday: 10:00 AM - 10:00 PM</p>
+                </div>
+                <div class="flex justify-center space-x-6 mb-8">
+                    <a href="#" class="w-12 h-12 bg-blue-custom text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/reel/DNdHUYdTztS/?utm_source=ig_web_copy_link" class="w-12 h-12 bg-blue-custom text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://youtube.com/@toy_pom_dogkennel?si=RlkNrRwLCrI_9rgA" class="w-12 h-12 bg-blue-custom text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </div>
+                <div class="border-t border-gray-800 pt-8">
+                    <p class="text-gray-400">&copy; 2020 <span class="text-yellow-custom">Ashish Bhatia</span> - Toy_Pom_Dog_Kennel. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling and animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add scroll animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            const animatedElements = document.querySelectorAll('.card-hover');
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
